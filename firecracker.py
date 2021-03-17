@@ -211,7 +211,7 @@ def build_command(house, unit, action):
 
     # Add in the unit code. Ignore if bright or dim command,
     # which just applies to last unit.
-    if unit > 0 and unit < MAX_UNIT:
+    if unit > 0 and unit <= MAX_UNIT:
         if action.upper() != 'BRT' and action.upper() != 'DIM':
             cmd = cmd | UNIT_LIST[ unit - 1 ]
     else:
